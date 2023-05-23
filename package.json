@@ -1,0 +1,47 @@
+{
+  "name": "github-dx-demo",
+  "version": "1.0.2",
+  "description": "Demo repository highlighting an integrated developer experience with GitHub ecosystem tools.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "./__test__/ci.sh",
+    "test::integration": "./__test__/ci.sh integration",
+    "build": "ncc build src/index.js --license licenses.txt"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collinmcneese/github-dx-demo.git"
+  },
+  "keywords": [
+    "github",
+    "developer-experience"
+  ],
+  "author": "Collin McNeese <collinmcneese@github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/collinmcneese/github-dx-demo/issues"
+  },
+  "homepage": "https://github.com/collinmcneese/github-dx-demo#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1",
+    "cspell": "^6.31.1",
+    "eslint": "^8.39.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "markdownlint-cli": "^0.33.0",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "express": "^4.18.2",
+    "request": "^2.88.2",
+    "sequelize": "6.1.0",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
+    "yamljs": "^0.3.0"
+  }
+}

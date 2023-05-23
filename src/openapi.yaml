@@ -1,0 +1,109 @@
+# openapi.yaml
+# This file is used to generate the OpenAPI specification for the Users API.
+
+openapi: 3.0.0
+info:
+  title: Users API
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+components:
+  schemas:
+    User:
+      type: object
+      # Properties are id, name, emoji
+      properties:
+        id:
+          type: string
+          description: The user ID (unique)
+        name:
+          type: string
+          description: The user name
+        emoji:
+          type: string
+          description: The user emoji
+      required:
+        - id
+        - name
+paths:
+  /api/users:
+    post:
+      summary: Create an user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /api/users/{id}:
+    get:
+      summary: Get an user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Not found
+    put:
+      summary: Update an user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Not found
+    delete:
+      summary: Delete an user by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: Not found
