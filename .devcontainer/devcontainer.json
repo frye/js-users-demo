@@ -1,0 +1,20 @@
+{
+  "name": "Users API devcontainer",
+  "remoteEnv": {
+    "DOCKER_ARGS": "--network=host",
+    "INSTALLATION_TYPE": "labs"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "github.copilot",
+        "oderwat.indent-rainbow"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install"
+}
