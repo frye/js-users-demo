@@ -1,0 +1,42 @@
+# Issue template for creating enhancement issues
+
+name: Enhancement Request
+description: Use this template for requesting enhancements to the project.
+title: "[Enhancement]: "
+labels: ["enhancement"]
+# assignees:
+#   - GitHub username or team name
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this enhancement request!
+  - type: textarea
+    id: request-description
+    attributes:
+      label: Enhancement Description
+      description: Please describe the enhancement you are requesting.
+      placeholder: I would like to see...
+    validations:
+      required: true
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues
+      description: |
+        Are there any related issues or pull requests for this enhancement? If so, please link them here.
+      placeholder: |
+        -
+  - type: dropdown
+    id: type
+    attributes:
+      label: What type of enhancement is this?
+      multiple: true
+      options:
+        - Functionality
+        - Performance
+        - Usability
+        - Security
+        - Content
+        - Other
+
