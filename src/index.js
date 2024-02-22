@@ -1,5 +1,6 @@
 // index.js:
 // This file defines the Express server and loads the routes from the routes.js file.
+// Just a comment for test
 
 const express = require('express');
 const app = express();
