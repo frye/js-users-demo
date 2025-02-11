@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "",
+    "test": "jest",
     "build": "ncc build src/index.js --license licenses.txt"
   },
   "engines": {
@@ -31,8 +31,10 @@
     "cspell": "^6.31.1",
     "eslint": "^8.39.0",
     "eslint-config-strongloop": "^2.1.0",
+    "jest": "^29.7.0",
     "markdownlint-cli": "^0.33.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
