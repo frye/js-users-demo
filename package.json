@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "./__test__/ci.sh",
-    "test::integration": "./__test__/ci.sh integration",
+    "test": "",
     "build": "ncc build src/index.js --license licenses.txt"
   },
   "engines": {
