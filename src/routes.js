@@ -69,26 +69,6 @@ router.put('/users/:id', (req, res) => {
   }
 });
 
-// Define a route to delete a specific user by ID
-router.delete('/users/:id', (req, res) => {
-  // Extract the user ID from the request parameters
-  let { id } = req.params;
-
-  // Find the index of the user with the matching ID in the users array
-  let userIndex = users.findIndex((user) => user.id === id);
-
-  // If no user is found, send a 404 error response
-  if (userIndex === -1) {
-    res.status(404).send('User not found');
-  } else {
-    // Otherwise, remove the user from the users array
-    users.splice(userIndex, 1);
-
-    // Send a response with a 204 status code (No Content)
-    res.status(204).send();
-  }
-});
-
 // Define a route to add a new user to the database
 router.post('/db/users', async(req, res) => {
   // Extract the name, id, and emoji from the request body
