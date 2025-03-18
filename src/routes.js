@@ -69,8 +69,6 @@ router.put('/users/:id', (req, res) => {
   }
 });
 
-//TODO Delete
-
 // Define a route to add a new user to the database
 router.post('/db/users', async(req, res) => {
   // Extract the name, id, and emoji from the request body

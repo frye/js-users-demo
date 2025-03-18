@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "",
+    "test": "jest",
     "build": "ncc build src/index.js --license licenses.txt"
   },
   "engines": {
