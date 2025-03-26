@@ -1,0 +1,1 @@
+- Stack: express, Sequelize, Jest, Supertest
