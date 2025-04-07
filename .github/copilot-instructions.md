@@ -1,2 +1,2 @@
-- Stack: express, Sequelize, Jest, Supertest
+- Stack: express, Sequelize, Jest, Supertest, SQLite
 - Always include comments/documentation with the suggested code
