@@ -1,0 +1,3 @@
+- Stack: express, Sequelize, Jest, Supertest, SQLite
+- Always include comments/documentation with the suggested code
+- Always include a comment //AI_start at the beginning and //AI_end at the end of code suggestions you provide to highlight the start and end of the suggested section
