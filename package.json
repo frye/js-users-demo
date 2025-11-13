@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "",
+    "test": "jest --verbose",
     "build": "ncc build src/index.js --license licenses.txt"
   },
   "engines": {
@@ -31,8 +31,10 @@
     "cspell": "^6.31.1",
     "eslint": "^8.39.0",
     "eslint-config-strongloop": "^2.1.0",
+    "jest": "^30.2.0",
     "markdownlint-cli": "^0.33.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "supertest": "^7.1.4"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -42,5 +44,12 @@
     "sqlite3": "^5.1.6",
     "uuid": "^9.0.0",
     "yamljs": "^0.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testTimeout": 10000
   }
 }
