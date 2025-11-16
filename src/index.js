@@ -153,8 +153,15 @@ app.get('/redoc', (req, res) => {
   res.send(require('./redoc'));
 });
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+//AI_start
+// Start server only if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+  });
+}
+
+// Export app for testing
+module.exports = app;
+//AI_end
 
