@@ -173,14 +173,22 @@ describe('routes API endpoints', () => {
         name: 'Array Update Test',
       };
 
-      await request(app)
-        .put(`/api/users/${firstUser.id}`)
-        .send(updatedData)
-        .expect(200);
+      try {
+        await request(app)
+          .put(`/api/users/${firstUser.id}`)
+          .send(updatedData)
+          .expect(200);
 
-      // Verify the name was actually updated in the array
-      const updatedUser = users.find((u) => u.id === firstUser.id);
-      expect(updatedUser.name).toBe(updatedData.name);
+        // Verify the name was actually updated in the array
+        const updatedUser = users.find((u) => u.id === firstUser.id);
+        expect(updatedUser.name).toBe(updatedData.name);
+      } finally {
+        // Restore the original name to avoid test pollution
+        const userToRestore = users.find((u) => u.id === firstUser.id);
+        if (userToRestore) {
+          userToRestore.name = originalName;
+        }
+      }
     });
   });
 
